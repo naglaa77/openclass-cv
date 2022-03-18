@@ -6,6 +6,31 @@ $hover-clr: #dd6ec2d6;
     margin: 0;
     box-sizing: border-box;
 }
+@mixin forSection{
+    margin-top: 1em;
+    margin-bottom: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $hover-clr;
+    padding-bottom: 2em;
+}
+@mixin forh2 {
+    text-align: center;
+    color: white;
+    background-color: $bg-clr;
+    font-size: 2rem;
+    font-family: sans-serif;
+    padding: 0.3em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px #dd6ec254;
+    margin-bottom: 1em;
+}
+@mixin fori {
+    font-size: .8rem;
+    color: $bg-clr;
+    margin-right: 0.5em;
+}
 ul {
     list-style: none;
 }
@@ -36,15 +61,10 @@ body::after {
 .container {
     display: grid;
     grid-template-columns: minmax(200px,1fr);
-    grid-template-rows: repeat(4,1fr);
+    grid-template-rows: repeat(4,auto);
 }
 header {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid $hover-clr;
+    @include forSection;
     .info {
         background-color: $bg-clr;
         color: white;
@@ -119,3 +139,69 @@ header {
     }
     
 }
+/*start experience section*/
+.experience {
+    @include forSection;
+    h2 {
+        @include forh2;   
+    }
+    .main {
+        > li {
+            margin-bottom: 1.2em;
+            span {
+                font-weight: 600;
+                display: block;
+                font-size: 1.2rem;
+                margin-bottom: 0.5em;
+                i {
+                    font-size: .8rem;
+                    color: $bg-clr;
+                    margin-right: 0.5em;
+                }
+            }
+            .secand {
+                margin-top: 1em;
+                padding-left: 1.3em;
+                li {
+                    margin-bottom: 0.7em;
+                    font-style: normal;
+                    color: #000000b5;
+                    font-size: 1rem;
+                }
+            }
+            &:not(span) {
+                font-style: italic;
+            }
+        }
+    }
+}
+/*End experience section*/
+/*Start competance*/
+.competance {
+    @include forSection;
+    h2 {
+        @include forh2;
+    }
+    ul {
+        li {
+            margin-bottom: 1.4em;
+            font-style: normal;
+            color: #000000b5;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            line-height: 1.6;
+            i {
+                @include fori;
+            }
+        }
+    }
+}
+/*End competance*/
+/*Start formations*/
+.formations {
+    @include forSection;
+    h2 {
+        @include forh2;
+    }
+}
+/*End formations*/
