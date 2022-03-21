@@ -198,7 +198,7 @@ header .profil-img img:hover {
     display: block;
     -webkit-box-shadow: 0 0 0 0 #fff;
             box-shadow: 0 0 0 0 #fff;
-    max-width: 100%;
+    width: 100%;
   }
   header .profil-img img:hover {
     -webkit-transform: scale(1);
@@ -217,8 +217,17 @@ header .profil-img img:hover {
 }
 
 @media (min-width: 900px) {
+  .container {
+    width: 1080px;
+  }
   header {
     border: none;
+  }
+  header .profil-img img {
+    max-width: 80%;
+  }
+  header .info .social-media {
+    margin-top: 3em;
   }
 }
 
